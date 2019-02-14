@@ -24,14 +24,7 @@ char packetBuffer[255]; //buffer to hold incoming packet
 char sendBuffer[255];
 
 WiFiUDP Udp;
-//-- SMAZ
-const int LED_PIN = 5;
 
-// remember the button state so we only send
-// when the state changes
-boolean buttonState;
-boolean lastButtonState = LOW; // arbitrary
-//--
 const int rButton = 5;
 const int bButton = 4;
 const int gButton = 3;
@@ -119,8 +112,6 @@ void loop() {
     if (len > 0) packetBuffer[len] = 0;
     Serial.println("Contents:");
     Serial.println(packetBuffer);
-
-
   }
 }
 
