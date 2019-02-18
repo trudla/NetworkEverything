@@ -5,6 +5,8 @@
 
   created 3 February 2019
   by Michael Shiloh
+  changed 18 February 2019
+  by Magda and Sara
 */
 
 #include <SPI.h>
@@ -74,9 +76,6 @@ void setup() {
   Serial.println(localPort);
   Udp.begin(localPort);
 
-  //char packetBuffer[255]; //buffer to hold incoming packet UZ TO MOM?
-
-
   pinMode(RedLED, OUTPUT);
   pinMode(BlueLED, OUTPUT);
   pinMode(GreenLED, OUTPUT);
@@ -112,7 +111,6 @@ void sendCmnd() {
 
 void receiveCmnd(){
   
-
   // if there's data available, read a packet
   int packetSize = Udp.parsePacket();
 
