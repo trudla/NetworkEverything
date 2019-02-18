@@ -18,7 +18,7 @@ char ssid[] = SECRET_SSID;        // your network SSID (name)
 char pass[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
 int keyIndex = 0;            // your network key Index number (needed only for WEP)
 
-unsigned int localPort = 2000;      // local port to listen on
+unsigned int localPort = 5000;      // local port to listen on
 
 char packetBuffer[255]; //buffer to hold incoming packet
 char sendBuffer[255];
@@ -107,28 +107,6 @@ void sendCmnd() {
     lastRState = rButtonState;
     lastBState = bButtonState;
     lastGState = gButtonState;
-  }
-
-  // once we send a packet to the server, it might
-  // respond, so read it
-
-  // if there's data available, read a packet
-  int packetSize = Udp.parsePacket();
-  if (packetSize)
-  {
-    Serial.print("Received packet of size ");
-    Serial.println(packetSize);
-    Serial.print("From ");
-    IPAddress remoteIp = Udp.remoteIP();
-    Serial.print(remoteIp);
-    Serial.print(", port ");
-    Serial.println(Udp.remotePort());
-
-    // read the packet into packetBufffer
-    int len = Udp.read(packetBuffer, 255);
-    if (len > 0) packetBuffer[len] = 0;
-    Serial.println("Contents:");
-    Serial.println(packetBuffer);
   }
 }
 
