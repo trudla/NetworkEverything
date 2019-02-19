@@ -37,9 +37,9 @@ boolean lastRState = LOW;
 boolean lastBState = LOW;
 boolean lastGState = LOW;
 
-int GreenLED = 9;
-int BlueLED = 8;
-int RedLED = 7;
+const int GreenLED = 9;
+const int BlueLED = 8;
+const int RedLED = 7;
 
 // IP address of the receiving device
 IPAddress receivingDeviceAddress(192, 168, 1, 25);
