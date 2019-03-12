@@ -1,0 +1,3 @@
+/* 
+function for showing available data
+*/
