@@ -1,0 +1,171 @@
+
+African Violet 3 ** 
+Aloe 1 * 
+Amaryllis 3 ** 
+Anthurium 8 *** I 
+Aralia 4 ** 
+Arrowhead Vine 4 ** 
+Asparagus Fern 6 ** III 
+Azalea 8 *** II 
+Baby's Tears 6 ** 
+Bamboo Plant 4 ** 
+Bay Tree 6 ** I 
+Begonia 7 *** III 
+Begonia Rex 6 ** VI 
+Billbergia 6 *** I 
+Bird of Paradise 3 * 
+Black-eyed Susan 4 ** III 
+Bloodleaf 7 *** III 
+Blue African Lily 7 ** 
+Boston Fern 6 ** 
+Bottlebrush Plant 6 ** 
+Bougainvillea 8 *** II 
+Browailia 3 * 
+Buddist Pine 7 ** 
+Burro's Tail 3 *** 
+Butterfly Flower 8 *** II 
+Buxus 4 ** 
+Caladium 7 ** III 
+Calceolaria 1 * 
+Calla Lily 7 *** VII 
+Camellia 7 *** I 
+Cape Ivy 1 * 
+Cape cowslip 7 ** 
+Cardinal Flower 1 * 
+Cast Iron Plant 3 * 
+Castor Oil Plant 4 ** 
+Century Plant 1 * 
+Ceropegia 1 * 
+Chenille Plant 6 *** I 
+Chinese Evergreen 4 ** 
+Christmas Cactus 6 ** VII 
+Christmas Pepper 7 *** I, III 
+Chrysanthemum 6 ** 
+Cineraria 4 ** 
+Citrus 1 * 
+Clerodendrum 7 *** 
+Coffee Plant 7 *** III 
+Coleus 6 ** 
+Columnes 7 *** I 
+Copperleaf 6 *** I 
+Coral Berry 7 *** I, III 
+Corn Plant 7 *** 
+Creeping Moss 7 *** 
+Crossandra 7 *** I 
+Croton 7 ** 
+Crown of Thorns 3 * 
+Cryptantyhus 1 ** 
+Cupid's Bower 6 ** 
+Cyclamen 7 *** VIII 
+Devil's Ivy 4 ** 
+Dipladenia 1 * VI 
+Dracaena (all) 7 *** 
+Dumb Cane 1 * VI 
+Easter Lily 4 ** 
+Echeveria 1 * 
+Egyptian Star Cluster 7 ** 
+Euonymus 1 * VI 
+Fat-headed Lizzie 4 ** I 
+Ferns 6 *** I 
+Figs, Creeping 7 *** I 
+Figs, Fiddle Leaf 1 * VI 
+Figs, Weeping 4 ** 
+Fingernail Plant 7 ** 
+Firecracker Plant 7 ** II 
+Flame of the Woods 7 ** 
+Flaming Katy 1 * VI 
+Flowering Maple 7 *** 
+Friendship Plant 6 * 
+Fuchsia 7 *** I 
+Gardenia 8 *** I, II 
+Geranium 1 ** VI
+Glory Lily 4 ** 
+Gloxinia 7 ** VIII 
+Gold-Dust Plant 1 * 
+Grape Ivy 4 ** VI 
+Hedera Ivy 6 **
+Heliotrope 7 **
+Hen-and-Chicken 1 *
+Hibiscus 4 *
+Hyacinth 8 *** III, VI
+Impatiens Wallerania 7 ** VI
+Inch Plant 1 ** VI
+Jacaranda 6 ** I
+Jacobinia 7 ***
+Jade Plant 1 * VI
+Japanese Sedge 7 *** III
+Jasmine 7 ***
+Jasmine Plant 8 *** I
+Jelly Bean Plant 1 *
+Jerusalem Cherry 3 **
+Jessamine 7 ***
+Kafir Lily 1 * VI
+Kalanchoe 1 * VI
+Kangaroo Thorn 6 **
+Kentia Palm 6 **
+Lady Palm 8 **
+Lantana 1 * VI
+Lipstick Vine 7 **
+Lucky Clover 1 *
+Maidenhair Fern 6 *** III
+Monstera 4 **
+Mosaic Plant 7 **
+Mosses-in-the-Cradle 7 ** III
+Myrtle 1 *
+Narcissus 7 **
+Nasturtium 7 **
+Natal Plum 6 **
+Nicodemia (Indoor Oak) 4 *
+Nicotiana 7 **
+Norfolk Island Pine 4 **
+Oleander 7 **
+Orchid 1 ** VI
+Painters Palette 8 **
+Panda Plant 1 * VI
+Parasol Plant 4 * I
+Parlour Plant 7 **
+Passion Flower 7 *** III
+Peace Lily 8 *** I
+Peperomia 1 **
+Philodendron 4 *
+Piggyback Plant 6 ** III
+Pigmy Date Palm 8 *** VII
+Piles (Aluminum Plant) 6 **
+Plume Flower 7 ** III
+Poinsettia 1 * VI
+Polyscias 6 **
+Pony Tail 1 *
+Prayer Plant 7 ** I
+Primula 7 ** III
+Rabbit's Foot Fern 7 **
+Rubber Plant 4 *
+Sensitive Plant 7 *** I
+Sentry Palm 6 **
+Shrimp Plant 1 * VI
+Siderasis 1 *
+Silk Oak 4 *
+Snake Plant 1 * VI
+Snakeskin Plant 4 ** I
+Spider Plant 7 **
+Star-of-Bethleham 7 **
+Strawberry Geranium 1 **
+Sugar Almond Plant 1 * VI
+Swedish Ivy 4 **
+Sweet Flag 8 *** IV
+Table Fern 8 **
+Temple Bells 7 **
+Tillandsia 7 **
+Umbrella Plant 10 ***
+Umbrella Tree 1 ** VI
+Vase Plant 7 **
+Veltheimia 7 ***
+Velvet Plant 7 ** I
+Venus Flytrap 10 **
+Verbena 1 *
+Violet Flame 7 **
+Vriesia 1 **
+Wandering Jew 1 * VI
+Wax Plant 4 * I
+Wood-Rose 6 *** I
+Yesterday, Today, Tomorrow 6 **
+Zebra Plant 7 ** VII
