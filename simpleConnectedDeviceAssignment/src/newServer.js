@@ -88,10 +88,46 @@ webSocket.on('connect', (socket) => {
 			ARDUINO_LISTENING_AT, 
 			ARDUINO_ADDRESS);
 	});
+	socket.on('changeLEDr', () => {
+		console.log('Web server socket: received changeLED message from web client');
+	    // Send the message to Arduino
+	    var color='r';
+	    var changeLEDMessage = new Buffer(color);
+	    console.log('Color is: ');
+	    console.log(color);
+	    udpServer.send(changeLEDMessage,
+			0, 
+			changeLEDMessage.length, 
+			ARDUINO_LISTENING_AT, 
+			ARDUINO_ADDRESS);
+	});
+	socket.on('changeLEDg', () => {
+		console.log('Web server socket: received changeLED message from web client');
+	    // Send the message to Arduino
+	    var color='g';
+	    var changeLEDMessage = new Buffer(color);
+	    console.log('Color is: ');
+	    console.log(color);
+	    udpServer.send(changeLEDMessage,
+			0, 
+			changeLEDMessage.length, 
+			ARDUINO_LISTENING_AT, 
+			ARDUINO_ADDRESS);
+	});
 
     // if you get the 'disconnect' message, say the user disconnected
 	socket.on('disconnect', () => {
     	console.log('Web server socket: user disconnected');
+    	var color='n';
+	    var changeLEDMessage = new Buffer(color);
+	    console.log('Color is: ');
+	    console.log(color);
+	    udpServer.send(changeLEDMessage,
+			0, 
+			changeLEDMessage.length, 
+			ARDUINO_LISTENING_AT, 
+			ARDUINO_ADDRESS);
+
 	});
 });
 

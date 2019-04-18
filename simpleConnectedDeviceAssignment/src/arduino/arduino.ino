@@ -30,22 +30,26 @@ WiFiUDP Udp;
 
 const int sensor = A1;
 const int curr = 5;
+const int redLED = 7;
+const int greenLED = 9;
 int moisture = 0;
 int received = 0;
 
 // IP address of the receiving device
-IPAddress receivingDeviceAddress(192, 168, 1, 9);
+IPAddress receivingDeviceAddress(192, 168, 1, 33);
 unsigned int receivingDevicePort = 2390;
 
 void setup() {
   pinMode(sensor, OUTPUT);
   pinMode(curr, OUTPUT);
+  pinMode(redLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
   
   //Initialize serial and wait for port to open:
   Serial.begin(9600);
-  while (!Serial) {
+  /*while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
-  }
+  }*/
 
   // check for the presence of the shield:
   if (WiFi.status() == WL_NO_SHIELD) {
@@ -104,10 +108,31 @@ void receiveCmnd(){
        sending();
        digitalWrite(curr, LOW);
     }
+    else if (packetBuffer[0] == 'r')
+    {
+      Serial.print("Received: ");
+      Serial.println(packetBuffer[0]);
+      digitalWrite(redLED, HIGH);
+      digitalWrite(greenLED, LOW);
+    }
+    else if (packetBuffer[0] == 'g')
+    {
+      Serial.print("Received: ");
+      Serial.println(packetBuffer[0]);
+      digitalWrite(redLED, LOW);
+      digitalWrite(greenLED, HIGH);
+    }
+    else if (packetBuffer[0] == 'n')
+    {
+      Serial.print("Received: ");
+      Serial.println(packetBuffer[0]);
+      digitalWrite(redLED, LOW);
+      digitalWrite(greenLED, LOW);
+    }
     else 
     {
        Serial.print("Received value is not 1 but: ");
-       Serial.println(packetBuffer[0]);  
+       Serial.println(packetBuffer);  
     }  
     
     // if we wanted to send anything back e.g. to
@@ -128,7 +153,7 @@ void sending() {
 
 void reading (){
   moisture = analogRead(sensor);
-  moisture = map(moisture, 6, 870, 0, 100);
+  moisture = map(moisture, 0, 870, 0, 100);
   Serial.print("Moisture: ");
   Serial.print(moisture);
   Serial.println("%");
