@@ -10,7 +10,6 @@
   changed 4 March 2019
   by Magda
 */
-
 #include <SPI.h>
 #include <WiFiNINA.h>
 #include <WiFiUdp.h>
@@ -22,23 +21,26 @@ char ssid[] = SECRET_SSID;        // your network SSID (name)
 char pass[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
 int keyIndex = 0;            // your network key Index number (needed only for WEP)
 
+unsigned int localPort = 5000;      // local port to listen on
+
 char packetBuffer[255]; //buffer to hold incoming packet
 char sendBuffer[255];
 
 WiFiUDP Udp;
 
-const int rButton = A1;
-const int bButton = A2;
-const int gButton = A3;
-boolean rButtonState;
-boolean bButtonState;
-boolean gButtonState;
+const int sensor = A1;
+const int curr = 5;
+int moisture = 0;
+int received = 0;
 
 // IP address of the receiving device
-IPAddress receivingDeviceAddress(192, 168, 1, 25);
+IPAddress receivingDeviceAddress(192, 168, 1, 9);
 unsigned int receivingDevicePort = 2390;
 
 void setup() {
+  pinMode(sensor, OUTPUT);
+  pinMode(curr, OUTPUT);
+  
   //Initialize serial and wait for port to open:
   Serial.begin(9600);
   while (!Serial) {
@@ -72,40 +74,65 @@ void setup() {
 }
 
 void loop() {
-/*
- * I was thinking of either sending data all the time or only when prompted but decided to send it all the time
- */
-  sendCmnd();
-  delay(1000);
-
+  receiveCmnd();
 }
 
-void sendCmnd() {
-/*
- * Buttons can also represent different moisture sensors
- */
+void receiveCmnd(){
   
-  rButtonState = analogRead(rButton);
-  bButtonState = analogRead(bButton);
-  gButtonState = analogRead(gButton);
+  // if there's data available, read a packet
+  int packetSize = Udp.parsePacket();
 
-  //if (rButtonState != lastRState || bButtonState != lastBState || gButtonState != lastGState) {
+  // if nobody sent us anything, packetSize
+  // would be zero, so a non-zero packetSize
+  // means we have something to work on
+  if (packetSize) {
+    Serial.print("Received packet of size ");
+    Serial.println(packetSize);
+    Serial.print("From ");
+    IPAddress remoteIp = Udp.remoteIP();
+    Serial.print(remoteIp);
+    Serial.print(", port ");
+    Serial.println(Udp.remotePort());
 
-    Serial.println("Button state changed; sending new state");
-    Udp.beginPacket(receivingDeviceAddress, receivingDevicePort);
+    // read the packet into packetBufffer
+    int len = Udp.read(packetBuffer, 255);
     
-    sendBuffer[0] = map(rButtonState,800,200,0,100); //DUMMY VALUES!!!
-    sendBuffer[1] = map(bButtonState,800,200,0,100);
-    sendBuffer[2] = map(gButtonState,800,200,0,100);
-    Udp.write(sendBuffer, 3);
+    if (packetBuffer[0] == '1')
+    {
+       digitalWrite(curr, HIGH);
+       reading();
+       sending();
+       digitalWrite(curr, LOW);
+    }
+    else 
+    {
+       Serial.print("Received value is not 1 but: ");
+       Serial.println(packetBuffer[0]);  
+    }  
+    
+    // if we wanted to send anything back e.g. to
+    // acknowledge the packet
+    // this would be the place
+    
+  }
+}  
+
+void sending() {
+    sendBuffer[0] = moisture;
+    Udp.beginPacket(receivingDeviceAddress, receivingDevicePort);
+    Serial.print("Sending: ");
+    Serial.println(sendBuffer[0]);
+    Udp.write(sendBuffer, 1);  //can add more data for comparison
     Udp.endPacket();
-   /* 
-    lastRState = rButtonState;
-    lastBState = bButtonState;
-    lastGState = gButtonState;
-  } */
 }
 
+void reading (){
+  moisture = analogRead(sensor);
+  moisture = map(moisture, 6, 870, 0, 100);
+  Serial.print("Moisture: ");
+  Serial.print(moisture);
+  Serial.println("%");
+}
 
 void printWiFiStatus() {
   // print the SSID of the network you're attached to:
