@@ -1,12 +1,114 @@
 <!doctype html>
 <html>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,400" rel="stylesheet">
+    <style>
+    :root {
+        --main-bg: #84f94d;
+        --compl-color: #000000;
+    }
+    body {background-color: var(--main-bg);
+    }
+    .first {
+        font-family: 'IBM Plex Sans', sans-serif;
+        text-align: center;
+        font-size: 70px;
+    }
+    .second {
+        font-family: 'IBM Plex Sans', sans-serif;
+        text-align: center;
+        font-size: 50px;
+        margin-top: 10%;
+    }
+    .button {
+        background-color:var(--main-bg);
+        border:2px solid var(--compl-color);
+        display:inline-block;
+        cursor:pointer;
+        color:var(--compl-color);
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size:17px;
+        padding:8px 20px;
+        text-decoration:none;
+        border-radius: 2px;
+        margin-left: 50px;
+    }
+    .button:hover {
+        background-color:var(--compl-color);
+        color:var(--main-bg);
+    }
+    .button:active {
+        position:relative;
+        top:1px;
+    }
+    #actMLvl {
+        text-align: center;
+        margin: auto;
+    }
+    #data_second {
+        display:none;
+    }
+
+    #reading {
+        margin-left: 50px;
+    }
+
+    #results {
+        margin:30px;
+        font-size:30px;
+    }
+
+    .select-style select {
+        font-family: 'IBM Plex Sans', sans-serif;
+        border:2px solid var(--compl-color);
+        border-radius: 2px;
+        font-size:16px;
+        padding: 8px 15px;
+        box-shadow: none;
+        background: transparent;
+        background-image: none;
+    }
+
+    .select-style select:focus {
+        outline: none;
+        background-color: var(--main-bg);
+        border:2px solid var(--compl-color);
+    }
+
+
+    </style>
     <head>
         <meta charset="utf8"/>
-        <title>Moisture level</title>
+        <title>Moisture Level Control Panel</title>
+    <script src="/socket.io/socket.io.js"></script>
         <script src="client.js"></script>
     </head>
-    <h1>Moisture level</h1>
     <body>
-        <button onclick="getMoistureLvl()">Get moisture level</button>
+        <div class="first" id="data_first">
+            <p>At what moisture level do you want to water your plant?</p>
+            <span class="select-style">
+                <select id="moistureLevel">
+                  <option value="10">10%</option>
+                  <option value="20">20%</option>
+                  <option value="30">30%</option>
+                  <option value="40">40%</option>
+                  <option value="50">50%</option>
+                  <option value="60">60%</option>
+                  <option value="70">70%</option>
+                  <option value="80">80%</option>
+                  <option value="90">90%</option>
+                  <option value="100">100%</option>
+                </select>
+            </span>
+            <button class="button" onclick="GetSelectedItem('moistureLevel');">Submit</button>
+        </div>
+        <div class="second" id="data_second">
+            <p id = "decision">Wondering if your plant is dead?</p>
+            <button class="button" id="actMLvl" onclick="getMoisture()" style="display:none">Check moisture level</button>
+            <div id="results">
+                <span>Last moisture level:</span>
+                <span id = "reading">no data</span>
+                <span id = "perc_sign"></span>
+            </div>
+        </div>
     </body>
 </html>
