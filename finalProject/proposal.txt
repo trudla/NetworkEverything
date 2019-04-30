@@ -1,0 +1,11 @@
+Physiacal components:
+-camera/phone
+-raspberry pi
+-laptop
+
+Software:
+-raspberrypi receives a livestream from the camera and using
+ a computer vision program (Google Cloud Vision/OpenCV) sends labels to
+ the computer
+-node.js server receives specific label/s and display a certain number of
+ them = creates a map of what appeared before the camera on a website(?)
