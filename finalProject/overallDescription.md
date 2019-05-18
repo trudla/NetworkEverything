@@ -1,11 +1,11 @@
 # Concept
 
--MEMORY GAME
--user remembers a random sequence of objects appearing on the screen
--user recreates the sequence by placing physical pictures of those objects in front of the camera, in the same order as previously seen on the screen
--sequence length starts at 1 and increments by 1 with every additional round
--placing wrong picture in front of the camera ends the game
--user can restart the game and try again
+-MEMORY GAME    
+-user remembers a random sequence of objects appearing on the screen    
+-user recreates the sequence by placing physical pictures of those objects in front of the camera, in the same order as previously seen on the screen    
+-sequence length starts at 1 and increments by 1 with every additional round    
+-placing wrong picture in front of the camera ends the game   
+-user can restart the game and try again    
 
 
 # Description
