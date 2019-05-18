@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+        <title>Game</title>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="client.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+        <style>
+        	:root {
+        		--main-bg: #540d6e;
+        		--compl-color: #ffffff;
+        	}
+        	body, html, #container {
+			  height: 100%;
+			}
+        	body{
+        		font-family: 'Roboto', sans-serif;
+        	}
+		    #bigPicture {
+		    	display: block;
+				margin-left: auto;
+				margin-right: auto;
+		    	height: 400px;
+		    	width: auto;
+		    }
+			
+			#guessPict {
+				background: lightgreen;
+				text-align: center;
+				font-size: 300px;
+			}
+			#howManyLeft {
+				margin:0;
+			}
+			.button {
+		        background-color:var(--compl-color);
+		        border:2px solid var(--main-bg);
+		        display:inline-block;
+		        cursor:pointer;
+		        color:var(--main-bg);
+		        font-family: 'Roboto', sans-serif;
+		        font-size:17px;
+		        padding:8px 20px;
+		        text-decoration:none;
+		        border-radius: 2px;
+		    }
+		    .button:hover {
+		        background-color:var(--main-bg);
+		        color:var(--compl-color);
+		    }
+		    .button:active {
+		        position:relative;
+		    }
+		    .firstHalf {
+		    	height:50%;
+				width:100%;
+				margin:auto;
+				background-color:var(--compl-color);
+				color:var(--main-bg);
+				text-align: center;
+				font-size: 20px;
+		    }
+		    .secondHalf {
+		    	height:50%;
+				width:100%;
+				margin:auto;
+				background-color:var(--compl-color);
+				color:var(--main-bg);
+				text-align: center;
+				font-size: 300px;
+		    }
+		    li {
+		    	margin-top: 50px;
+		    	margin-left: 50px;
+		    	text-align: left;
+		    }
+		    p {
+		    	margin-top: 30px;
+		    }
+
+        </style>
+    </head>
+    <body>
+    	<span id=start>
+	    	<div id=message class="firstHalf">
+	    		<h1 style="margin-top: 120px;">Memory game</h1>
+	    		<hr color="var(--main-bg)">
+	    		<ol>
+		    		<li>Each picture appears for 1.5s</li>
+		    		<li>After all the pictures disappear, put the appropriate cardboard pictures in front of the camera in the same order as they've appeared on the screen</li>
+		    		<li>Number of pictures starts from 1 and increments by 1</li>
+		    		<li>There is not time limit for choosing the right picture but wrong picture automatically ends the game</li>
+	    		</ol>
+	    		<button class=button onclick="GameStart();" style="margin-top: 100px">START</button>
+	    	</div>
+	    </span>
+	    <span id=displayPict style="display:none;">
+	    	<div id=upperHalf style="background: var(--main-bg); height: 50%;"></div>
+	    	<hr color="#ee4266">
+	    	<div id=lowerHalf></div>
+	    </span>
+	    <span id=guessPict style="display:none">
+	    	<p id=howManyLeft class=secondHalf style="margin-top: 200px">something</p>
+	    </span>
+	    <span id=gameOver style="display:none">
+	    	<div class=firstHalf>
+		    	<p style="margin-top: 120px;">Your number of points:</p>
+		    	<p id=points style="display: inline"></p>
+		    	<p>You chose: </p>
+		    	<p id=wrong></p>
+	    		<p>The right asnwer was:</p>
+	    		<p id=right style="margin-bottom: 50px;"></p>
+	    		<hr color="#3bceac">
+	    		<button class=button onclick="GroundZero();" style="margin-top: 100px;">Restart</button>
+	    	</div>	
+	    </span>
+    </body>
+</html>
