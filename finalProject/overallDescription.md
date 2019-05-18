@@ -33,8 +33,8 @@
 ### Code:    
 - game generates a random sequence of objects and the next object is always different from the current one    
 - every object is first shown at the center of the screen and its small icon is appended at the bottom until all the object are displayed    
--in the guessing phase user sees number of remaining objects 'to guess'    
--game checks if the user puts the right picture in front of Pi's camera -> if not then the game is over    
--the next object is always different from the current one so the game ignores the current object until other object is put in front of the camera    
--for this reason and also because Pi's recognition is quite slow the game has no time limit and ends after the user makes a mistake    
+- in the guessing phase user sees number of remaining objects 'to guess'    
+- game checks if the user puts the right picture in front of Pi's camera -> if not then the game is over    
+- the next object is always different from the current one so the game ignores the current object until other object is put in front of the camera    
+- for this reason and also because Pi's recognition is quite slow the game has no time limit and ends after the user makes a mistake    
 
